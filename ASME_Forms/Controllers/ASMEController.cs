@@ -17,7 +17,12 @@ namespace ASME_Forms.Controllers
             return View(objASMEList);
         }
 
-        public IActionResult Create() 
+        public IActionResult Create_CBI_Tank() 
+        {
+            return View();
+        }
+
+        public IActionResult Create_CBI_HX()
         {
             return View();
         }
