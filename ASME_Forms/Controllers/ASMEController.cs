@@ -31,7 +31,12 @@ namespace ASME_Forms.Controllers
         {
             return View();
         }
-        public IActionResult Create_VI_HEADS()
+        public IActionResult Create_FI_HEADS()
+        {
+            return View();
+        }
+
+        public IActionResult Create_P_50I()
         {
             return View();
         }
