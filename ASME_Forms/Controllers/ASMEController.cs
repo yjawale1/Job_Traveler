@@ -26,5 +26,10 @@ namespace ASME_Forms.Controllers
         {
             return View();
         }
+
+        public IActionResult Create_VI()
+        {
+            return View();
+        }
     }
 }

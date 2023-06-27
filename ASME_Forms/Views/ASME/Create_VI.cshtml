@@ -33,7 +33,7 @@
             }
 
             .narrow-input {
-                width: 160px;
+                width: 270px;
             }
         </style>
 
@@ -47,15 +47,9 @@
             <!-- PART# -->
             <label class="p-0">PART#</label>
             <input type="text" class="uppercase-input narrow-input" />
-            <!-- BASIC TANK SN# -->
-            <label class="p-0">BASIC TANK SN#</label>
-            <input type="text" class="uppercase-input narrow-input" />
-        </div>
+        </div>  
 
         <div class="mb-4 p-1">
-            <!-- HX SN# -->
-            <label class="p-0">HX SN#</label>
-            <input type="text" class="uppercase-input narrow-input" />
             <!-- DESCRIPTION: -->
             <label class="p-0">DESCRIPTION:</label>
             <input type="text" class="uppercase-input narrow-input" />
@@ -89,10 +83,10 @@
             <table style="width:100%">
                 <thead>
                     <tr>
-                        <th colspan="2">PROCEDURE</th>
-                        <th colspan="2">WELDER</th>
+                        <th>PROCEDURE</th>
+                        <th>WELD/EMP #</th>
                         <th>FITUP</th>
-                        <th colspan="2">LOT NUMBER</th>
+                        <th>LOT NUMBER</th>
                         <th colspan="2">MFG</th>
                     </tr>
                 </thead>
@@ -101,165 +95,201 @@
                     <!-- Row 1 -->
                     <tr>
                         <td style=" font-size: 12px;">PLATE ROLLS</td>
-                        <td style=" font-size: 12px;">PLATE ROLLS</td>
                         <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
-                        </td>
-                        <td>&#x2718;</td>
                         <td class="text-uppercase" contenteditable="true"></td>
                         <td class="text-uppercase" contenteditable="true"></td>
-                        <td class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
-                        <td class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
                     <!-- Row 2 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">LONGSEAM WEILD</td>
-                        <td colspan="2">
+                        <td style=" font-size: 12px;">LONGSEAM WELD</td>
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
                         <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
                     <!-- Row 3 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">JOGGLE</td>
-                        <td colspan="2">
+                        <td style=" font-size: 12px;">JOGGLER</td>
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
                         <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
                     <!-- Row 4 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">TOP HEAD</td>
-                        <td colspan="2">
+                        <td style=" font-size: 12px;">PLUG/FTG WELD</td>
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true"></td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td class="text-uppercase" contenteditable="true"></td>
                         <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
                     <!-- Row 5 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">TUBE VERIFICATION HX INSTALLATION</td>
-                        <td colspan="2">
+                        <td style=" font-size: 12px;">UPPER HEAD WELD</td>
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td class="text-uppercase" contenteditable="true"></td>
                         <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
                     <!-- Row 6 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">CHAMBER HEAD</td>
-                        <td colspan="2">
+                        <td style=" font-size: 12px;">LOWER HEAD WELD</td>
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td class="text-uppercase" contenteditable="true"></td>
                         <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
                     <!-- Row 7 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">BOTTOM HEAD</td>
-                        <td colspan="2">
+                        <td style=" font-size: 12px;">NOZZLE WELD</td>
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td class="text-uppercase" contenteditable="true"></td>
                         <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
                     <!-- Row 8 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">CHAMBER SHELL</td>
-                        <td colspan="2">
+                        <td style=" font-size: 12px;">MANWAY WELD</td>
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td class="text-uppercase" contenteditable="true"></td>
                         <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
                     <!-- Row 9 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">ATTACHMENTS</td>
-                        <td colspan="2">
+                        <td style=" font-size: 12px;">TUBE EXPANDER</td>
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true"></td>
+                        <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
                         <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
                     <!-- Row 10 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">ERW STUD</td>
-                        <td colspan="2">
+                        <td style=" font-size: 12px;">TUBE WELD</td>
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
                         <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
                     <!-- Row 11 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">MPG HYDRO TEST</td>
-                        <td colspan="2">
+                        <td style=" font-size: 12px;">ATTACHMENTS</td>
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td style="position: relative;">
-                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
-                            <input type="date" id="datepicker" />
-                        </td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase">&#x2718;</td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
                     <!-- Row 12 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">MFG NATL BD.NUMBER</td>
-                        <td colspan="2">
+                        <td style=" font-size: 12px;">STUD WELD</td>
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td style="position: relative;">
-                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
-                            <input type="date" id="datepicker" />
-                        </td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase">&#x2718;</td>
+                        <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
                     <!-- Row 13 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">QA NATL BD NUMBER</td>
-                        <td colspan="2">
+                        <td style=" font-size: 12px;">PASSIVATION PREP</td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                    </tr>
+
+                    <!-- Row 14 -->
+                    <tr>
+                        <td style=" font-size: 12px;">MFG VISUAL INSP</td>
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td style="position: relative;">
                             <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
                             <input type="date" id="datepicker" />
                         </td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase">&#x2718;</td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">N/A</span>
+                            <input type="number" oninput="this.value = this.value.slice(0, 5)" class="number-input" style="border: none; border-bottom: 1px solid black;">
+                        </td>
+                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
-                    <!-- Row 14 -->
+                    <!-- Row 15 -->
+                    <tr>
+                        <td style=" font-size: 12px;">MFG AIR TEST</td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">PSI:</span>
+                            <input type="number" oninput="this.value = this.value.slice(0, 5)" class="number-input" style="border: none; border-bottom: 1px solid black;">
+                        </td>
+                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                    </tr>
+
+                    <!-- Row 16 -->
+                    <tr>
+                        <td style=" font-size: 12px;">MFG HYDRO TEST</td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">PSI:</span>
+                            <input type="number" oninput="this.value = this.value.slice(0, 5)" class="number-input" style="border: none; border-bottom: 1px solid black;">
+                        </td>
+                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                    </tr>
+
+                    <!-- Row 17 -->
                     <tr>
                         <td colspan="2" style=" font-size: 12px;">QA HYDRO TEST</td>
-                        <td colspan="2">
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td style="position: relative;">
@@ -274,70 +304,48 @@
                             <span style="position: absolute; top: 0; left: 0; font-size: 12px;">GAUGE:</span>
                             <input type="number" oninput="this.value = this.value.slice(0, 5)" class="number-input" style="border: none; border-bottom: 1px solid black;">
                         </td>
-                        <td colspan="2" class="text-uppercase">&#x2718;</td>
-                    </tr>
-
-                    <!-- Row 15 -->
-                    <tr>
-                        <td colspan="2" style=" font-size: 12px;">AI HYDRO TEST</td>
-                        <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
-                        </td>
-                        <td style="position: relative;">
-                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
-                            <input type="date" id="datepicker" />
-                        </td>
-
-                        <td class="text-uppercase">&#x2718;</td>
-                        <td class="text-uppercase">&#x2718;</td>
-                        <td colspan="2" class="text-uppercase">&#x2718;</td>
-                    </tr>
-
-                    <!-- Row 16 -->
-                    <tr>
-                        <td colspan="2" style=" font-size: 12px;">CONDENSATE PAN</td>
-                        <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
-                        </td>
-                        <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
-                    </tr>
-
-                    <!-- Row 17 -->
-                    <tr>
-                        <td colspan="2" style=" font-size: 12px;">FLUE ASSEMBLY</td>
-                        <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
-                        </td>
-                        <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
 
                     <!-- Row 18 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">BASE CLEAT</td>
-                        <td colspan="2">
+                        <td colspan="2" style=" font-size: 12px;">AI HYDRO TEST</td>
+                        <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
-                    </tr>
-
-                    <!-- Row 19 -->
-                    <tr>
-                        <td colspan="2" style=" font-size: 12px;">MFG FINAL INSP</td>
-                        <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         <td style="position: relative;">
                             <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
                             <input type="date" id="datepicker" />
                         </td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase">&#x2718;</td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">PSI:</span>
+                            <input type="number" oninput="this.value = this.value.slice(0, 5)" class="number-input" style="border: none; border-bottom: 1px solid black;">
+                        </td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">GAUGE:</span>
+                            <input type="number" oninput="this.value = this.value.slice(0, 5)" class="number-input" style="border: none; border-bottom: 1px solid black;">
+                        </td>
                     </tr>
+
+                    <!-- Row 19 -->
+                    <tr>
+                        <td colspan="6" class="text-uppercase">NOTES</td>
+                    </tr>
+
+                    <!-- Row 20 -->
+                    <tr>
+                        <td colspan="6" class="text-uppercase" contenteditable="true"></td>
+                    </tr>
+
+                    <!-- Row 21 -->
+                    <tr>
+                        <td colspan="6" class="text-uppercase" contenteditable="true"></td>
+                    </tr>
+
+                    <!-- Row 22 -->
+                    <tr>
+                        <td colspan="6" class="text-uppercase" contenteditable="true"></td>
+                    </tr>
+
                 </tbody>
             </table>
         </div>
