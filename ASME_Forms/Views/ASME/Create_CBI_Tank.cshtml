@@ -3,12 +3,30 @@
 <form method="post">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-  
             <img src="https://www.pvi.com/dfsmedia/0533dbba17714b1ab581ab07a4cbb521/55972-50065/pvi-logo" alt="PVI Logo" style="display: block; margin-left: auto; margin-right: auto; width: 400px; height: 100px;">
             <h5 class="text-primary text-center">ASME SECTION IV - HLW</h5>
             <h5 class="text-primary text-center">CONQUEST / BRIGAGDE TANK FABRICATION / INSPECTION REPORT</h5>
             <hr/>
         </div>
+
+        <!-- checkbox Button -->
+        <script>
+            function toggleRow(checkbox) {
+                var row = checkbox.parentNode.parentNode; // Get the parent row of the checkbox
+                var inputs = row.getElementsByTagName("input"); // Get all the input elements in the row
+
+                for (var i = 0; i < inputs.length; i++) {
+                    // Iterate over all input elements
+                    if (inputs[i].type === "checkbox") {
+                        inputs[i].checked = checkbox.checked; // Check/uncheck the checkbox
+                    } else {
+                        inputs[i].disabled = !checkbox.checked; // Enable/disable input elements based on checkbox state
+                    }
+                }
+            }
+        </script>
+
+
 
         <script>
             // JavaScript
@@ -90,6 +108,7 @@
             <table style="width:100%">
                 <thead>
                     <tr>
+                        <th>INCLUDE</th>
                         <th colspan="2">PROCEDURE</th>
                         <th colspan="2">WELDER</th>
                         <th>FITUP</th>
@@ -101,6 +120,9 @@
                 <tbody>
                     <!-- Row 1 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td style=" font-size: 12px;">PLATE ROLLS</td>
                         <td style=" font-size: 12px;">PLATE ROLLS</td>
                         <td>
@@ -118,6 +140,9 @@
 
                     <!-- Row 2 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">LONGSEAM WEILD</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -129,6 +154,9 @@
 
                     <!-- Row 3 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">JOGGLE</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -140,6 +168,9 @@
 
                     <!-- Row 4 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">TOP HEAD</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -151,6 +182,9 @@
 
                     <!-- Row 5 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">TUBE VERIFICATION HX INSTALLATION</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -162,6 +196,9 @@
 
                     <!-- Row 6 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">CHAMBER HEAD</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -173,6 +210,9 @@
 
                     <!-- Row 7 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">BOTTOM HEAD</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -184,6 +224,9 @@
 
                     <!-- Row 8 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">CHAMBER SHELL</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -195,6 +238,9 @@
 
                     <!-- Row 9 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">ATTACHMENTS</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -206,6 +252,9 @@
 
                     <!-- Row 10 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">ERW STUD</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -217,6 +266,9 @@
 
                     <!-- Row 11 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">MPG HYDRO TEST</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -231,6 +283,9 @@
 
                     <!-- Row 12 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">MFG NATL BD.NUMBER</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -245,20 +300,25 @@
 
                     <!-- Row 13 -->
                     <tr>
-                        <td colspan="2" style=" font-size: 12px;">QA NATL BD NUMBER</td>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
+                        <td colspan="2" style="font-size: 12px;">BASE CLEAT</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td style="position: relative;">
-                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
-                            <input type="date" id="datepicker" />
-                        </td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase">&#x2718;</td>
+                        <td>&#x2718;</td>
+                        <td colspan="2" class="text-uppercase" style="font-size: 12px;">NONE REQUIRED</td>
+                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
+
+
 
                     <!-- Row 14 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">QA HYDRO TEST</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -280,6 +340,9 @@
 
                     <!-- Row 15 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">AI HYDRO TEST</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -296,6 +359,9 @@
 
                     <!-- Row 16 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">CONDENSATE PAN</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -307,6 +373,9 @@
 
                     <!-- Row 17 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">FLUE ASSEMBLY</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -318,6 +387,9 @@
 
                     <!-- Row 18 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">BASE CLEAT</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -329,6 +401,9 @@
 
                     <!-- Row 19 -->
                     <tr>
+                        <td>
+                            <input type="checkbox" onclick="toggleRow(this)" checked />
+                        </td>
                         <td colspan="2" style=" font-size: 12px;">MFG FINAL INSP</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
@@ -343,8 +418,69 @@
             </table>
         </div>
 
+        <div class="border p-3 mt-4 center-align">
+            <!-- JOB TRAVELER# -->
+            <label class="p-0">JOB TRAVELER#</label>
+            <input type="number" class="narrow-input" />
+            <!-- NATL.BD.# -->
+            <label class="p-0">NATL.BD.#</label>
+            <input type="text" class="uppercase-input narrow-input" />
+        </div>
+        
+        <!-- capture code -->
+        <div class="border p-3 mt-4 center-align">
+            <div style="display: flex; flex-direction: column; align-items:center;">
+                <video id="video" style="width:700px;" autoplay></video>
+                <div id="snap" style="height:150px; width:150px; border-radius:0%; cursor:pointer; font-family:'Courier New',Courier New, Courier, monospace; text-align:center; background-color:;margin:20px; font-size:1.5em; line-height:150px">
+                    Capture
+                </div>
+                <canvas id="canvas" width="640" height="480"></canvas>
+            </div>
+
+            <script>
+                const video = document.getElementById('video');
+                const canvas = document.getElementById('canvas');
+                const snap = document.getElementById('snap');
+
+                const constraints = {
+                    audio: false,
+                    video: {
+                        width: { min: 1024, ideal: 1280, max: 1920 },
+                        height: { min: 576, ideal: 720, max: 1080 }
+                    }
+                };
+
+                async function startWebCam() {
+                    try {
+                        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                        video.srcObject = stream;
+                        window.stream = stream;
+                    } catch (e) {
+                        console.log(e.toString());
+                    }
+                }
+
+                const context = canvas.getContext('2d');
+                snap.addEventListener('click', () => {
+                    context.drawImage(video, 0, 0, 640, 480);
+                });
+
+                startWebCam();
+            </script>
+        </div>
+
+        <div class="border p-3 mt-4 center-align">
+            <!-- EMP# -->
+            <label class="p-0">EMP#</label>
+            <input type="number" class="narrow-input" />
+            <!-- DATE -->
+            <label class="p-0">DATE</label>
+            <input type="date" id="datepicker" />
+        </div>
+
         <div>
             <label>PVI Industries</label> <i class="bi bi-caret-right-fill"></i>
+            <label>Conquest/Brigade Tank Fab/ Insp Report</label> <i class="bi bi-caret-right-fill"></i>
             <lable>Version: March 2023</lable>
         </div>
 

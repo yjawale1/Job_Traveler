@@ -40,5 +40,14 @@ namespace ASME_Forms.Controllers
         {
             return View();
         }
+        public IActionResult Create_TI()
+        {
+            return View();
+        }
+
+        public IActionResult Create_PI()
+        {
+            return View();
+        }
     }
 }

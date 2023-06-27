@@ -1,0 +1,353 @@
+﻿@model ASME_CBI
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+
+            <img src="https://www.pvi.com/dfsmedia/0533dbba17714b1ab581ab07a4cbb521/55972-50065/pvi-logo" alt="PVI Logo" style="display: block; margin-left: auto; margin-right: auto; width: 400px; height: 100px;">
+            <h5 class="text-primary text-center">ASME SECTION IV</h5>
+            <h5 class="text-primary text-center">COMBUSTION CHAMBER CONICAL DRAGON</h5>
+            <h5 class="text-primary text-center">PART FABRICATION INSPECTION REPORT</h5>
+            <hr />
+        </div>
+
+        <script>
+            // JavaScript
+            document.addEventListener("keyup", function (event) {
+                if (event.target.classList.contains("uppercase-input")) {
+                    event.target.value = event.target.value.toUpperCase();
+                }
+            });
+        </script>
+
+        <script>
+            function restrictInputLength(element, maxLength) {
+                if (element.textContent.length > maxLength) {
+                    element.textContent = element.textContent.slice(0, maxLength);
+                }
+            }
+        </script>
+
+        <style>
+            .center-align {
+                text-align: center;
+            }
+
+            .narrow-input {
+                width: 500px;
+            }
+        </style>
+
+        <div class="mb-4 p-1">
+            <!-- JOB TRAVELER# -->
+            <label class="p-0">JOB #</label>
+            <input type="number" class="narrow-input" />
+            <!-- UN-PSVT PART -->
+            <label class="p-0">PART#</label>
+            <input type="text" class="uppercase-input narrow-input" />
+        </div>
+
+        <div class="mb-4 p-1">
+            <!-- SERIAL NO -->
+            <label class="p-0">SERIAL#</label>
+            <input type="text" class="uppercase-input narrow-input" />
+            <!-- DWG# -->
+            <label class="p-0">DWG#</label>
+            <input type="text" class="uppercase-input narrow-input" />
+        </div>
+
+        <div class="mb-4 p-1">
+            <!-- DESCRIPTION: -->
+            <label class="p-0">DESCRIPTION:</label>
+            <input type="text" class="uppercase-input narrow-input" />
+            <!-- MVP# -->
+            <label class="p-0">MVP#</label>
+            <input type="text" class="uppercase-input narrow-input" />
+        </div>
+
+        <!-- Table Form -->
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+
+            th, td {
+                border: 1px solid black;
+                padding: 8px;
+            }
+
+            .number-input {
+                width: 50px; /* Adjust the width as desired */
+                height: 30px; /* Adjust the height as desired */
+            }
+        </style>
+
+        <!-- Actual Table -->
+        <div class="center-align">
+            <table style="width:100%">
+                <thead>
+                    <tr>
+                        <th colspan="8">FITUP AND WELD</th>
+                    </tr>
+                    <tr>
+                        <th><i class="bi bi-check-lg"></i></th>
+                        <th>DESCRIPTION</th>
+                        <th>FITUP</th>
+                        <th>WELD ID</th>
+                        <th>QA</th>
+                        <th>DATE</th>
+                        <th>AI</th>
+                        <th>DATE</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- Row 1 -->
+                    <tr>
+                        <td></td>
+                        <td style=" font-size: 12px;">CC SHELL</td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                    </tr>
+
+                    <!-- Row 2 -->
+                    <tr>
+                        <td></td>
+                        <td style=" font-size: 12px;">NAMEPLATE</td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                    </tr>
+
+                    <!-- Row 3 -->
+                    <tr>
+                        <td><i class="bi bi-check-lg"></td>
+                        <td style=" font-size: 12px;">QA INSPECTION</td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                    </tr>
+
+                    <!-- Row 4 -->
+                    <tr>
+                        <td><i class="bi bi-check-lg"></td>
+                        <td style=" font-size: 12px;">AI INSPECTION</td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="center-align mt-5">
+            <table style="width:100%">
+                <thead>
+                    <tr>
+                        <th colspan="2"><i class="bi bi-check-lg"></i>NAMEPLATE</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- Row 1 -->
+                    <tr>
+                        <td style=" font-size: 12px;">QA</td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                    </tr>
+
+                    <!-- Row 2 -->
+                    <tr>
+                        <td style=" font-size: 12px;">AI</td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Actual Table -->
+        <div class="center-align mt-5">
+            <table style="width:100%">
+                <thead>
+                    <tr>
+                        <th colspan="8"><i class="bi bi-check-lg">MATERIAL IDENTIFICATION</th>
+                    </tr>
+                    <tr>
+                        <th>PART</th>
+                        <th>GRADE</th>
+                        <th>LOT NUMBER</th>
+                        <th>QA</th>
+                        <th>DATE</th>
+                        <th>AI</th>
+                        <th>DATE</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- Row 1 -->
+                    <tr>
+                        <td style=" font-size: 12px;">CONICAL C/C SHELL</td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                    </tr>
+
+                    <!-- Row 2 -->
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+
+                    <!-- Row 3 -->
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                    </tr>
+
+                    <!-- Row 4 -->
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                        <td class="text-uppercase" contenteditable="true"></td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
+                            <input type="date" id="datepicker" />
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <label>PVI Industries</label> <i class="bi bi-caret-right-fill"></i>
+            <label>ASME Section IV Inspection Report</label> <i class="bi bi-caret-right-fill"></i>
+            <lable>Version: March 2023</lable>
+        </div>
+
+
+        <div class="row mt-3">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">SAVE</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="ASME" asp-action="Index" class="btn btn-outline-secondary form-control">
+                    Back to List
+                </a>
+            </div>
+        </div>
+
+    </div>
+</form>
