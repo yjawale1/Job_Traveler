@@ -6,13 +6,20 @@
             <img src="https://www.pvi.com/dfsmedia/0533dbba17714b1ab581ab07a4cbb521/55972-50065/pvi-logo" alt="PVI Logo" style="display: block; margin-left: auto; margin-right: auto; width: 400px; height: 100px;">
             <h5 class="text-primary text-center">ASME SECTION IV - HLW</h5>
             <h5 class="text-primary text-center">CONQUEST / BRIGAGDE TANK FABRICATION / INSPECTION REPORT</h5>
-            <hr/>
+            <hr />
         </div>
 
         <!-- checkbox Button -->
         <script>
             function toggleRow(checkbox) {
                 var row = checkbox.parentNode.parentNode; // Get the parent row of the checkbox
+
+                if (checkbox.checked) {
+                    row.style.backgroundColor = ""; // Reset the background color to default
+                } else {
+                    row.style.backgroundColor = "#e5e5e5"; // Change the background color to grey
+                }
+
                 var inputs = row.getElementsByTagName("input"); // Get all the input elements in the row
 
                 for (var i = 0; i < inputs.length; i++) {
@@ -46,8 +53,7 @@
         </script>
 
         <style>
-            .center-align 
-            {
+            .center-align {
                 text-align: center;
             }
 
@@ -112,7 +118,7 @@
                         <th colspan="2">PROCEDURE</th>
                         <th colspan="2">WELDER</th>
                         <th>FITUP</th>
-                        <th colspan ="2">LOT NUMBER</th>
+                        <th colspan="2">LOT NUMBER</th>
                         <th colspan="2">MFG</th>
                     </tr>
                 </thead>
@@ -126,13 +132,13 @@
                         <td style=" font-size: 12px;">PLATE ROLLS</td>
                         <td style=" font-size: 12px;">PLATE ROLLS</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input"/>
+                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
-                        <td class ="text-uppercase" contenteditable="true"></td>
+                        <td class="text-uppercase" contenteditable="true"></td>
                         <td class="text-uppercase" contenteditable="true"></td>
                         <td class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                         <td class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
@@ -362,14 +368,15 @@
                         <td>
                             <input type="checkbox" onclick="toggleRow(this)" checked />
                         </td>
-                        <td colspan="2" style=" font-size: 12px;">CONDENSATE PAN</td>
+                        <td colspan="2" style="font-size: 12px;">CONDENSATE PAN</td>
                         <td colspan="2">
                             <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
+                        <td colspan="2" class="text-uppercase" style="font-size: 12px;">NONE REQUIRED</td>
                         <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
                     </tr>
+
 
                     <!-- Row 17 -->
                     <tr>
@@ -426,7 +433,7 @@
             <label class="p-0">NATL.BD.#</label>
             <input type="text" class="uppercase-input narrow-input" />
         </div>
-        
+
         <!-- capture code -->
         <div class="border p-3 mt-4 center-align">
             <div style="display: flex; flex-direction: column; align-items:center;">

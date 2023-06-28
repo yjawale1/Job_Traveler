@@ -14,6 +14,13 @@
         <script>
             function toggleRow(checkbox) {
                 var row = checkbox.parentNode.parentNode; // Get the parent row of the checkbox
+
+                if (checkbox.checked) {
+                    row.style.backgroundColor = ""; // Reset the background color to default
+                } else {
+                    row.style.backgroundColor = "#e5e5e5"; // Change the background color to grey
+                }
+
                 var inputs = row.getElementsByTagName("input"); // Get all the input elements in the row
 
                 for (var i = 0; i < inputs.length; i++) {
