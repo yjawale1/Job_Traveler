@@ -58,36 +58,47 @@
             .narrow-input {
                 width: 160px;
             }
+
+            .broad-input {
+                width: 200px;
+            }
+
+            .big-input {
+                width: 250px;
+            }
         </style>
 
         <div class="mb-4 p-1">
             <!-- JOB TRAVELER# -->
-            <label class="p-0">JOB TRAVELER#</label>
-            <input type="number" class="narrow-input" />
+            <label asp-for="JOB_TRAVELER_NUMBER" class="p-0"></label>
+            <input asp-for="JOB_TRAVELER_NUMBER" class="broad-input" />
             <!-- NATL.BD.# -->
-            <label class="p-0">NATL.BD.#</label>
-            <input type="text" class="uppercase-input narrow-input" />
+            <label asp-for="NATL_BD_NUMBER" class="p-0"></label>
+            <input asp-for="NATL_BD_NUMBER" class="uppercase-input broad-input" />
             <!-- PART# -->
-            <label class="p-0">PART#</label>
-            <input type="text" class="uppercase-input narrow-input" />
-            <!-- BASIC TANK SN# -->
-            <label class="p-0">BASIC TANK SN#</label>
-            <input type="text" class="uppercase-input narrow-input" />
+            <label asp-for="PART_NUMBER" class="p-0"></label>
+            <input asp-for="PART_NUMBER" class="uppercase-input broad-input" />
         </div>
 
         <div class="mb-4 p-1">
+            <!-- BASIC TANK SN# -->
+            <label asp-for="BASIC_TANK_NUMBER" class="p-0"></label>
+            <input asp-for="BASIC_TANK_NUMBER" class="uppercase-input broad-input" />
             <!-- HX SN# -->
-            <label class="p-0">HX SN#</label>
-            <input type="text" class="uppercase-input narrow-input" />
+            <label asp-for="HX_NUMBER" class="p-0"></label>
+            <input asp-for="HX_NUMBER" class="uppercase-input broad-input" />
             <!-- DESCRIPTION: -->
-            <label class="p-0">DESCRIPTION:</label>
-            <input type="text" class="uppercase-input narrow-input" />
+            <label asp-for="DESCRIPTION" class="p-0"></label>
+            <input asp-for="DESCRIPTION" class="uppercase-input big-input" />
+        </div>
+
+        <div class="mb-4 p-1">
             <!-- DWG# -->
-            <label class="p-0">DWG#</label>
-            <input type="text" class="uppercase-input narrow-input" />
+            <label asp-for="DWG_NUMBER" class="p-0"></label>
+            <input asp-for="DWG_NUMBER" class="uppercase-input broad-input" />
             <!-- MVP# -->
-            <label class="p-0">MVP#</label>
-            <input type="text" class="uppercase-input narrow-input" />
+            <label asp-for="MVP_NUMBER" class="p-0"></label>
+            <input asp-for="MVP_NUMBER" class="uppercase-input broad-input" />
         </div>
 
         <!-- Table Form -->
@@ -102,8 +113,8 @@
             }
 
             .number-input {
-                width: 50px; /* Adjust the width as desired */
-                height: 30px; /* Adjust the height as desired */
+                width: 50px; 
+                height: 30px;
             }
         </style>
 
@@ -436,7 +447,7 @@
         <div class="border p-3 mt-4 center-align">
             <div style="display: flex; flex-direction: column; align-items:center;">
                 <video id="video" style="width:700px;" autoplay></video>
-                <div id="snap" style="height:150px; width:150px; border-radius:0%; cursor:pointer; font-family:'Courier New',Courier New, Courier, monospace; text-align:center; background-color:;margin:20px; font-size:1.5em; line-height:150px">
+                <div id="snap" style="height:150px; width:150px; border-radius:0%; cursor:pointer; font-family:'Courier New',Courier New, Courier, monospace; text-align:center; background-color:white;margin:20px; font-size:1.5em; line-height:150px">
                     Capture
                 </div>
                 <canvas id="canvas" width="640" height="480"></canvas>
