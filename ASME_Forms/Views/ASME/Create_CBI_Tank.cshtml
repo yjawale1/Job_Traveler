@@ -66,15 +66,25 @@
             .big-input {
                 width: 250px;
             }
+
+            .mfg-input {
+                width: 50px;
+                height: 30px;
+            }
+
+            .lot-input {
+                width: 100px;
+                height: 30px;
+            }
         </style>
 
         <div class="mb-4 p-1">
             <!-- JOB TRAVELER# -->
             <label asp-for="JOB_TRAVELER_NUMBER" class="p-0"></label>
-            <input asp-for="JOB_TRAVELER_NUMBER" class="broad-input" />
+            <input asp-for="JOB_TRAVELER_NUMBER" class="broad-input"/>
             <!-- NATL.BD.# -->
             <label asp-for="NATL_BD_NUMBER" class="p-0"></label>
-            <input asp-for="NATL_BD_NUMBER" class="uppercase-input broad-input" />
+            <input asp-for="NATL_BD_NUMBER" class="uppercase-input broad-input"/>
             <!-- PART# -->
             <label asp-for="PART_NUMBER" class="p-0"></label>
             <input asp-for="PART_NUMBER" class="uppercase-input broad-input" />
@@ -141,16 +151,24 @@
                         <td style=" font-size: 12px;">PLATE ROLLS</td>
                         <td style=" font-size: 12px;">PLATE ROLLS</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="PLATE_ROLLS_WELDER_1" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="PLATE_ROLLS_WELDER_2" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
-                        <td class="text-uppercase" contenteditable="true"></td>
-                        <td class="text-uppercase" contenteditable="true"></td>
-                        <td class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
-                        <td class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td>
+                            <input asp-for="PLATE_ROLLS_LOT_NUMBER_1" class="text-uppercase lot-input" />
+                        </td>
+                        <td>
+                            <input asp-for="PLATE_ROLLS_LOT_NUMBER_2" class="text-uppercase lot-input" />
+                        </td>
+                        <td>
+                            <input asp-for="PLATE_ROLLS_MFG_1" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
+                        <td>
+                            <input asp-for="PLATE_ROLLS_MFG_2" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
                     <!-- Row 2 -->
@@ -160,11 +178,13 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">LONGSEAM WEILD</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="LONGSEAM_WELD_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2">
+                            <input asp-for="LONGSEAM_WELD_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
                     <!-- Row 3 -->
@@ -174,11 +194,13 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">JOGGLE</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="JOGGLE_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2">
+                            <input asp-for="JOGGLE_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
                     <!-- Row 4 -->
@@ -188,11 +210,15 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">TOP HEAD</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="TOP_HEAD_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true"></td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2">
+                            <input asp-for="TOP_HEAD_LOT_NUMBER" class="text-uppercase lot-input" />
+                        </td>
+                        <td colspan="2">
+                            <input asp-for="TOP_HEAD_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
                     <!-- Row 5 -->
@@ -202,11 +228,13 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">TUBE VERIFICATION HX INSTALLATION</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="TUBE_VERIFICATION_HX_INSTALLATION_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2">
+                            <input asp-for="TUBE_VERIFICATION_HX_INSTALLATION_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
                     <!-- Row 6 -->
@@ -216,11 +244,13 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">CHAMBER HEAD</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="CHAMBER_HEAD_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2">
+                            <input asp-for="CHAMBER_HEAD_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
                     <!-- Row 7 -->
@@ -230,11 +260,13 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">BOTTOM HEAD</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="BOTTOM_HEAD_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2">
+                            <input asp-for="BOTTOM_HEAD_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
                     <!-- Row 8 -->
@@ -244,11 +276,13 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">CHAMBER SHELL</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="CHAMBER_SHELL_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2">
+                            <input asp-for="CHAMBER_SHELL_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
                     <!-- Row 9 -->
@@ -258,11 +292,15 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">ATTACHMENTS</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="ATTACHMENTS_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true"></td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2">
+                            <input asp-for="ATTACHMENTS_LOT_NUMBER" class="text-uppercase lot-input" />
+                        </td>
+                        <td colspan="2">
+                            <input asp-for="ATTACHMENTS_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
                     <!-- Row 10 -->
@@ -272,11 +310,13 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">ERW STUD</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="ERW_STUD_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2">
+                            <input asp-for="ERW_STUD_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
                     <!-- Row 11 -->
@@ -286,11 +326,11 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">MPG HYDRO TEST</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="MFG_HYDRO_TEST_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td style="position: relative;">
-                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
-                            <input type="date" id="datepicker" />
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;"></span>
+                            <input asp-for="MFG_HYDRO_TEST_DATE" id="datepicker" type="date" />
                         </td>
                         <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
                         <td colspan="2" class="text-uppercase">&#x2718;</td>
@@ -303,11 +343,11 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">MFG NATL BD.NUMBER</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="MFG_NATL_BD_NUMBER_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td style="position: relative;">
-                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
-                            <input type="date" id="datepicker" />
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;"></span>
+                            <input asp-for="MFG_NATL_BD_NUMBER_DATE" id="datepicker" type="date" />
                         </td>
                         <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
                         <td colspan="2" class="text-uppercase">&#x2718;</td>
@@ -318,16 +358,17 @@
                         <td>
                             <input type="checkbox" onclick="toggleRow(this)" checked />
                         </td>
-                        <td colspan="2" style="font-size: 12px;">BASE CLEAT</td>
+                        <td colspan="2" style="font-size: 12px;">QA NATL BD NUMBER</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="QA_NATL_BD_NUMBER_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
-                        <td>&#x2718;</td>
+                        <td style="position: relative;">
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;"></span>
+                            <input asp-for="QA_NATL_BD_NUMBER_DATE" id="datepicker" type="date" />
+                        </td>
                         <td colspan="2" class="text-uppercase" style="font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2" class="text-uppercase">&#x2718;</td>
                     </tr>
-
-
 
                     <!-- Row 14 -->
                     <tr>
@@ -336,19 +377,19 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">QA HYDRO TEST</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="QA_HYDRO_TEST_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td style="position: relative;">
-                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
-                            <input type="date" id="datepicker" />
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;"></span>
+                            <input asp-for="QA_HYDRO_TEST_DATE" id="datepicker" type="date" />
                         </td>
                         <td style="position: relative;">
                             <span style="position: absolute; top: 0; left: 0; font-size: 12px;">PSI:</span>
-                            <input type="number" oninput="this.value = this.value.slice(0, 5)" class="number-input" style="border: none; border-bottom: 1px solid black;">
+                            <input asp-for="QA_HYDRO_TEST_PSI" oninput="this.value = this.value.slice(0, 5)" class="lot-input" style="border: none; border-bottom: 1px solid black;">
                         </td>
                         <td style="position: relative;">
                             <span style="position: absolute; top: 0; left: 0; font-size: 12px;">GAUGE:</span>
-                            <input type="number" oninput="this.value = this.value.slice(0, 5)" class="number-input" style="border: none; border-bottom: 1px solid black;">
+                            <input asp-for="QA_HYDRO_TEST_GAUGE" oninput="this.value = this.value.slice(0, 5)" class="lot-input" style="border: none; border-bottom: 1px solid black;">
                         </td>
                         <td colspan="2" class="text-uppercase">&#x2718;</td>
                     </tr>
@@ -360,13 +401,12 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">AI HYDRO TEST</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="AI_HYDRO_TEST_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td style="position: relative;">
-                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
-                            <input type="date" id="datepicker" />
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;"></span>
+                            <input asp-for="AI_HYDRO_TEST_DATE" id="datepicker" type="date" />
                         </td>
-
                         <td class="text-uppercase">&#x2718;</td>
                         <td class="text-uppercase">&#x2718;</td>
                         <td colspan="2" class="text-uppercase">&#x2718;</td>
@@ -379,11 +419,13 @@
                         </td>
                         <td colspan="2" style="font-size: 12px;">CONDENSATE PAN</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="CONDENSATE_PAN_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td colspan="2" class="text-uppercase" style="font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2">
+                            <input asp-for="CONDENSATE_PAN_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
 
@@ -394,11 +436,13 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">FLUE ASSEMBLY</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="FLUE_ASSEMBLY_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2">
+                            <input asp-for="FLUE_ASSEMBLY_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
                     <!-- Row 18 -->
@@ -408,11 +452,13 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">BASE CLEAT</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="BASE_CLEAT_MFG" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
-                        <td colspan="2" class="text-uppercase" contenteditable="true" oninput="restrictInputLength(this, 2)"></td>
+                        <td colspan="2">
+                            <input asp-for="BASE_CLEAT_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
                     <!-- Row 19 -->
@@ -422,10 +468,10 @@
                         </td>
                         <td colspan="2" style=" font-size: 12px;">MFG FINAL INSP</td>
                         <td colspan="2">
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="MFG_FINAL_INSP_WELDER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         <td style="position: relative;">
-                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;">DATE:</span>
-                            <input type="date" id="datepicker" />
+                            <span style="position: absolute; top: 0; left: 0; font-size: 12px;"></span>
+                            <input asp-for="AI_HYDRO_TEST_DATE" id="datepicker" type="date" />
                         </td>
                         <td colspan="2" class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
                         <td colspan="2" class="text-uppercase">&#x2718;</td>
@@ -436,11 +482,7 @@
 
         <div class="border p-3 mt-4 center-align">
             <!-- JOB TRAVELER# -->
-            <label class="p-0">JOB TRAVELER#</label>
-            <input type="number" class="narrow-input" />
-            <!-- NATL.BD.# -->
-            <label class="p-0">NATL.BD.#</label>
-            <input type="text" class="uppercase-input narrow-input" />
+            <label class="p-0">CLICK ON CAPTURE BUTTON TO TAKE SNAP</label>
         </div>
 
         <!-- capture code -->
@@ -488,10 +530,10 @@
         <div class="border p-3 mt-4 center-align">
             <!-- EMP# -->
             <label class="p-0">EMP#</label>
-            <input type="number" class="narrow-input" />
+            <input asp-for="EMP_NUMBER" class="narrow-input" />
             <!-- DATE -->
             <label class="p-0">DATE</label>
-            <input type="date" id="datepicker" />
+            <input asp-for="CAPTURE_DATE" id="datepicker" type="date" />
         </div>
 
         <div>

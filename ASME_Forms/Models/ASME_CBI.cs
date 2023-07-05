@@ -1,13 +1,20 @@
-﻿using Microsoft.VisualBasic;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ASME_Forms.Models
 {
     public class ASME_CBI
-    {   //Top level input
+    {  
+        //Top level input
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int JOBId { get; set; }
+
         [DisplayName("JOB TRAVELER#")]
         public int JOB_TRAVELER_NUMBER { get; set; }
         [DisplayName("NATL.BD.#")]
@@ -71,29 +78,29 @@ namespace ASME_Forms.Models
 
         //Row10
         public int? ERW_STUD_WELDER { get; set; }
-        public string? ERW_STUD_LOT_NUMBER { get; set; }
+        public string? ERW_STUD_MFG { get; set; }
 
         //Row11
         public int? MFG_HYDRO_TEST_WELDER { get; set; }
-        public DateTime MFG_HYDRO_TEST_DATE { get; set; }
+        public DateTime? MFG_HYDRO_TEST_DATE { get; set; }
 
         //Row12
         public int? MFG_NATL_BD_NUMBER_WELDER { get; set; }
-        public DateTime MFG_NATL_BD_NUMBER_DATE { get; set; }
+        public DateTime? MFG_NATL_BD_NUMBER_DATE { get; set; }
 
         //Row13
         public int? QA_NATL_BD_NUMBER_WELDER { get; set; }
-        public DateTime QA_NATL_BD_NUMBER_DATE { get; set; }
+        public DateTime? QA_NATL_BD_NUMBER_DATE { get; set; }
 
         //Row14
         public int? QA_HYDRO_TEST_WELDER { get; set; }
-        public DateTime QA_HYDRO_TEST_DATE { get; set; }
+        public DateTime? QA_HYDRO_TEST_DATE { get; set; }
         public int? QA_HYDRO_TEST_PSI { get; set; }
         public int? QA_HYDRO_TEST_GAUGE { get; set; }
 
         //Row15
         public int? AI_HYDRO_TEST_WELDER { get; set; }
-        public DateTime AI_HYDRO_TEST_DATE { get; set; }
+        public DateTime? AI_HYDRO_TEST_DATE { get; set; }
 
         //Row16
         public int? CONDENSATE_PAN_WELDER { get; set; }
@@ -109,7 +116,14 @@ namespace ASME_Forms.Models
 
         //Row19
         public int? MFG_FINAL_INSP_WELDER { get; set; }
-        public DateTime MFG_FINAL_INSP_DATE { get; set; }
+        public DateTime? MFG_FINAL_INSP_DATE { get; set; }
 
+        //Capture Inputs
+        public int? EMP_NUMBER { get; set; }
+
+        public DateTime? CAPTURE_DATE { get; set; }
+
+        //photo store
+        public byte[]? PRODUCT_NUMBER { get; set; }
     }
 }

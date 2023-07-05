@@ -4,6 +4,7 @@ using ASME_Forms.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASME_Forms.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230704193948_AddedDateTimeForCaptureData")]
+    partial class AddedDateTimeForCaptureData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,11 +27,11 @@ namespace ASME_Forms.Migrations
 
             modelBuilder.Entity("ASME_Forms.Models.ASME_CBI", b =>
                 {
-                    b.Property<int>("JOBId")
+                    b.Property<int>("JOB_TRAVELER_NUMBER")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("JOBId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("JOB_TRAVELER_NUMBER"));
 
                     b.Property<DateTime?>("AI_HYDRO_TEST_DATE")
                         .HasColumnType("datetime2");
@@ -87,8 +90,8 @@ namespace ASME_Forms.Migrations
                     b.Property<string>("DWG_NUMBER")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("EMP_NUMBER")
-                        .HasColumnType("int");
+                    b.Property<string>("EMP_NUMBER")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ERW_STUD_MFG")
                         .HasColumnType("nvarchar(max)");
@@ -104,9 +107,6 @@ namespace ASME_Forms.Migrations
 
                     b.Property<string>("HX_NUMBER")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("JOB_TRAVELER_NUMBER")
-                        .HasColumnType("int");
 
                     b.Property<string>("JOGGLE_MFG")
                         .HasColumnType("nvarchar(max)");
@@ -165,9 +165,6 @@ namespace ASME_Forms.Migrations
                     b.Property<int?>("PLATE_ROLLS_WELDER_2")
                         .HasColumnType("int");
 
-                    b.Property<byte[]>("PRODUCT_NUMBER")
-                        .HasColumnType("varbinary(max)");
-
                     b.Property<DateTime?>("QA_HYDRO_TEST_DATE")
                         .HasColumnType("datetime2");
 
@@ -201,9 +198,44 @@ namespace ASME_Forms.Migrations
                     b.Property<int?>("TUBE_VERIFICATION_HX_INSTALLATION_WELDER")
                         .HasColumnType("int");
 
-                    b.HasKey("JOBId");
+                    b.HasKey("JOB_TRAVELER_NUMBER");
 
                     b.ToTable("ASME_CBI");
+
+                    b.HasData(
+                        new
+                        {
+                            JOB_TRAVELER_NUMBER = 377919,
+                            BASIC_TANK_NUMBER = "XB012115",
+                            DESCRIPTION = "Tank VT 225",
+                            DWG_NUMBER = "BUG32-C",
+                            HX_NUMBER = "",
+                            MVP_NUMBER = "",
+                            NATL_BD_NUMBER = "",
+                            PART_NUMBER = "151609"
+                        },
+                        new
+                        {
+                            JOB_TRAVELER_NUMBER = 377920,
+                            BASIC_TANK_NUMBER = "XB012116",
+                            DESCRIPTION = "Tank VT 325",
+                            DWG_NUMBER = "BUG33-C",
+                            HX_NUMBER = "",
+                            MVP_NUMBER = "",
+                            NATL_BD_NUMBER = "",
+                            PART_NUMBER = "151610"
+                        },
+                        new
+                        {
+                            JOB_TRAVELER_NUMBER = 377921,
+                            BASIC_TANK_NUMBER = "XB012117",
+                            DESCRIPTION = "Tank VT 425",
+                            DWG_NUMBER = "BUG34-C",
+                            HX_NUMBER = "",
+                            MVP_NUMBER = "",
+                            NATL_BD_NUMBER = "",
+                            PART_NUMBER = "151611"
+                        });
                 });
 #pragma warning restore 612, 618
         }

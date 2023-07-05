@@ -4,6 +4,7 @@ using ASME_Forms.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASME_Forms.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230705035453_NewDataBaseUsed")]
+    partial class NewDataBaseUsed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,11 +27,11 @@ namespace ASME_Forms.Migrations
 
             modelBuilder.Entity("ASME_Forms.Models.ASME_CBI", b =>
                 {
-                    b.Property<int>("JOBId")
+                    b.Property<int>("JOB_TRAVELER_NUMBER")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("JOBId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("JOB_TRAVELER_NUMBER"));
 
                     b.Property<DateTime?>("AI_HYDRO_TEST_DATE")
                         .HasColumnType("datetime2");
@@ -104,9 +107,6 @@ namespace ASME_Forms.Migrations
 
                     b.Property<string>("HX_NUMBER")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("JOB_TRAVELER_NUMBER")
-                        .HasColumnType("int");
 
                     b.Property<string>("JOGGLE_MFG")
                         .HasColumnType("nvarchar(max)");
@@ -201,7 +201,7 @@ namespace ASME_Forms.Migrations
                     b.Property<int?>("TUBE_VERIFICATION_HX_INSTALLATION_WELDER")
                         .HasColumnType("int");
 
-                    b.HasKey("JOBId");
+                    b.HasKey("JOB_TRAVELER_NUMBER");
 
                     b.ToTable("ASME_CBI");
                 });

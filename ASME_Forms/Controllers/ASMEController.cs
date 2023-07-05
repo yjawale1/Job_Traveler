@@ -1,6 +1,7 @@
 ﻿using ASME_Forms.Data;
 using ASME_Forms.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ASME_Forms.Controllers
 {
@@ -48,6 +49,16 @@ namespace ASME_Forms.Controllers
         public IActionResult Create_PI()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create_CBI_Tank(ASME_CBI obj)
+        {
+
+            _db.ASME_CBI.Add(obj);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }
