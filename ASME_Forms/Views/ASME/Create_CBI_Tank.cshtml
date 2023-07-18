@@ -497,52 +497,54 @@
                 </div>
                 <canvas id="canvas" width="640" height="480"></canvas>
             </div>
+
+            <script>
+                const video = document.getElementById('video');
+                const canvas = document.getElementById('canvas');
+                const snap = document.getElementById('snap');
+                const startButton = document.getElementById('startButton');
+
+                const constraints = {
+                    audio: false,
+                    video: {
+                        width: { min: 1024, ideal: 1280, max: 1920 },
+                        height: { min: 576, ideal: 720, max: 1080 }
+                    }
+                };
+
+                let stream;
+
+                async function startWebCam() {
+                    try {
+                        stream = await navigator.mediaDevices.getUserMedia(constraints);
+                        video.srcObject = stream;
+                    } catch (e) {
+                        console.log(e.toString());
+                    }
+                }
+
+                function stopWebCam() {
+                    if (stream) {
+                        const tracks = stream.getTracks();
+                        tracks.forEach(track => track.stop());
+                        video.srcObject = null;
+                    }
+                }
+
+                const context = canvas.getContext('2d');
+                snap.addEventListener('click', () => {
+                    context.drawImage(video, 0, 0, 640, 480);
+                    const imageData = context.getImageData(0, 0, canvas.width, canvas.height).data;
+                    const bytes = Array.from(imageData);
+
+                });
+
+                startButton.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent form submission or link redirect
+                    startWebCam();
+                });
+            </script>
         </div>
-
-        <script>
-            const video = document.getElementById('video');
-            const canvas = document.getElementById('canvas');
-            const snap = document.getElementById('snap');
-            const startButton = document.getElementById('startButton');
-
-            const constraints = {
-                audio: false,
-                video: {
-                    width: { min: 1024, ideal: 1280, max: 1920 },
-                    height: { min: 576, ideal: 720, max: 1080 }
-                }
-            };
-
-            let stream;
-
-            async function startWebCam() {
-                try {
-                    stream = await navigator.mediaDevices.getUserMedia(constraints);
-                    video.srcObject = stream;
-                } catch (e) {
-                    console.log(e.toString());
-                }
-            }
-
-            function stopWebCam() {
-                if (stream) {
-                    const tracks = stream.getTracks();
-                    tracks.forEach(track => track.stop());
-                    video.srcObject = null;
-                }
-            }
-
-            const context = canvas.getContext('2d');
-            snap.addEventListener('click', () => {
-                context.drawImage(video, 0, 0, 640, 480);
-            });
-
-            startButton.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent form submission or link redirect
-                startWebCam();
-            });
-        </script>
-
 
         <div class="border p-3 mt-4 center-align">
             <!-- EMP# -->

@@ -123,5 +123,8 @@ namespace ASME_Forms.Models
 
         //photo store
         public byte[]? PRODUCT_NUMBER { get; set; }
+        [NotMapped]
+        public IFormFile? ImageFile { get; set; }
+
     }
 }
