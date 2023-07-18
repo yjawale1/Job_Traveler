@@ -81,10 +81,10 @@
         <div class="mb-4 p-1">
             <!-- JOB TRAVELER# -->
             <label asp-for="JOB_TRAVELER_NUMBER" class="p-0"></label>
-            <input asp-for="JOB_TRAVELER_NUMBER" class="broad-input"/>
+            <input asp-for="JOB_TRAVELER_NUMBER" class="broad-input" />
             <!-- NATL.BD.# -->
             <label asp-for="NATL_BD_NUMBER" class="p-0"></label>
-            <input asp-for="NATL_BD_NUMBER" class="uppercase-input broad-input"/>
+            <input asp-for="NATL_BD_NUMBER" class="uppercase-input broad-input" />
             <!-- PART# -->
             <label asp-for="PART_NUMBER" class="p-0"></label>
             <input asp-for="PART_NUMBER" class="uppercase-input broad-input" />
@@ -123,7 +123,7 @@
             }
 
             .number-input {
-                width: 50px; 
+                width: 50px;
                 height: 30px;
             }
         </style>
@@ -489,45 +489,60 @@
         <div class="border p-3 mt-4 center-align">
             <div style="display: flex; flex-direction: column; align-items:center;">
                 <video id="video" style="width:700px;" autoplay></video>
-                <div id="snap" style="height:150px; width:150px; border-radius:0%; cursor:pointer; font-family:'Courier New',Courier New, Courier, monospace; text-align:center; background-color:white;margin:20px; font-size:1.5em; line-height:150px">
+                <div class="border p-3 mt-4 center-align">
+                    <button class="btn btn-primary mx-2" id="startButton">Start Webcam</button>
+                </div>
+                <div id="snap" class="btn btn-primary mx-2 border p-3 mt-4 center-align">
                     Capture
                 </div>
-                <canvas id="canvas" width="640" height="480">
-                    <input asp-for="PRODUCT_NUMBER">
-                </canvas> 
+                <canvas id="canvas" width="640" height="480"></canvas>
             </div>
-
-            <script>
-                const video = document.getElementById('video');
-                const canvas = document.getElementById('canvas');
-                const snap = document.getElementById('snap');
-
-                const constraints = {
-                    audio: false,
-                    video: {
-                        width: { min: 1024, ideal: 1280, max: 1920 },
-                        height: { min: 576, ideal: 720, max: 1080 }
-                    }
-                };
-
-                async function startWebCam() {
-                    try {
-                        const stream = await navigator.mediaDevices.getUserMedia(constraints);
-                        video.srcObject = stream;
-                        window.stream = stream;
-                    } catch (e) {
-                        console.log(e.toString());
-                    }
-                }
-
-                const context = canvas.getContext('2d');
-                snap.addEventListener('click', () => {
-                    context.drawImage(video, 0, 0, 640, 480);
-                });
-
-                startWebCam();
-            </script>
         </div>
+
+        <script>
+            const video = document.getElementById('video');
+            const canvas = document.getElementById('canvas');
+            const snap = document.getElementById('snap');
+            const startButton = document.getElementById('startButton');
+
+            const constraints = {
+                audio: false,
+                video: {
+                    width: { min: 1024, ideal: 1280, max: 1920 },
+                    height: { min: 576, ideal: 720, max: 1080 }
+                }
+            };
+
+            let stream;
+
+            async function startWebCam() {
+                try {
+                    stream = await navigator.mediaDevices.getUserMedia(constraints);
+                    video.srcObject = stream;
+                } catch (e) {
+                    console.log(e.toString());
+                }
+            }
+
+            function stopWebCam() {
+                if (stream) {
+                    const tracks = stream.getTracks();
+                    tracks.forEach(track => track.stop());
+                    video.srcObject = null;
+                }
+            }
+
+            const context = canvas.getContext('2d');
+            snap.addEventListener('click', () => {
+                context.drawImage(video, 0, 0, 640, 480);
+            });
+
+            startButton.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent form submission or link redirect
+                startWebCam();
+            });
+        </script>
+
 
         <div class="border p-3 mt-4 center-align">
             <!-- EMP# -->
