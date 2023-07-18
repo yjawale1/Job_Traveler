@@ -492,7 +492,9 @@
                 <div id="snap" style="height:150px; width:150px; border-radius:0%; cursor:pointer; font-family:'Courier New',Courier New, Courier, monospace; text-align:center; background-color:white;margin:20px; font-size:1.5em; line-height:150px">
                     Capture
                 </div>
-                <canvas id="canvas" width="640" height="480"></canvas>
+                <canvas id="canvas" width="640" height="480">
+                    <input asp-for="PRODUCT_NUMBER">
+                </canvas> 
             </div>
 
             <script>

@@ -9,12 +9,10 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace ASME_Forms.Models
 {
     public class ASME_CBI
-    {  
+    {
         //Top level input
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int JOBId { get; set; }
-
+        public int Id { get; set; }
         [DisplayName("JOB TRAVELER#")]
         public int JOB_TRAVELER_NUMBER { get; set; }
         [DisplayName("NATL.BD.#")]
