@@ -1,4 +1,4 @@
-﻿@model ASME_CBI
+﻿@model ASME_CBI_HX
 
 <form method="post">
     <div class="border p-3 mt-4">
@@ -63,26 +63,26 @@
 
         <div class="mb-4 p-1">
             <!-- JOB -->
-            <label class="p-0">JOB</label>
-            <input type="number" class="narrow-input" />
+            <label asp-for="JOB_TRAVELER_NUMBER_HX" class="p-0"></label>
+            <input asp-for="JOB_TRAVELER_NUMBER_HX" class="narrow-input" />
             <!-- HX SN -->
-            <label class="p-0">HX SN</label>
-            <input type="text" class="uppercase-input narrow-input" />
+            <label asp-for="HX_NUMBER_HX" class="p-0"></label>
+            <input asp-for="HX_NUMBER_HX" class="uppercase-input narrow-input" />
             <!-- PART -->
-            <label class="p-0">PART</label>
-            <input type="text" class="uppercase-input narrow-input" />
+            <label asp-for="PART_NUMBER_HX" class="p-0"></label>
+            <input asp-for="PART_NUMBER_HX" class="uppercase-input narrow-input" />
         </div>
 
         <div class="mb-4 p-1">
             <!-- DESCRIPTION: -->
-            <label class="p-0">DESCRIPTION:</label>
-            <input type="text" class="uppercase-input narrow-input" />
+            <label asp-for="DESCRIPTION_HX" class="p-0"></label>
+            <input asp-for="DESCRIPTION_HX" class="uppercase-input narrow-input" />
             <!-- DWG# -->
-            <label class="p-0">DWG#</label>
-            <input type="text" class="uppercase-input narrow-input" />
+            <label asp-for="DWG_NUMBER_HX" class="p-0"></label>
+            <input asp-for="DWG_NUMBER_HX" class="uppercase-input narrow-input" />
             <!-- MVP# -->
-            <label class="p-0">MVP#</label>
-            <input type="text" class="uppercase-input narrow-input" />
+            <label asp-for="MVP_NUMBER_HX" class="p-0"></label>
+            <input asp-for="MVP_NUMBER_HX" class="uppercase-input narrow-input" />
         </div>
 
         <!-- Table Form -->
@@ -99,6 +99,34 @@
             .number-input {
                 width: 50px; /* Adjust the width as desired */
                 height: 30px; /* Adjust the height as desired */
+            }
+        </style>
+
+        <style>
+            .center-align {
+                text-align: center;
+            }
+
+            .narrow-input {
+                width: 160px;
+            }
+
+            .broad-input {
+                width: 200px;
+            }
+
+            .big-input {
+                width: 250px;
+            }
+
+            .mfg-input {
+                width: 50px;
+                height: 30px;
+            }
+
+            .lot-input {
+                width: 100px;
+                height: 30px;
             }
         </style>
 
@@ -124,13 +152,15 @@
                         </td>
                         <td style=" font-size: 12px;">CHAMBER HEAD</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="CHAMBER_SHELL_FITUP_EMP_NUMBER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
-                        <td class="text-uppercase" contenteditable="true"></td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
-                        </td>                        
+                            <input asp-for="CHAMER_HEAD_PVI_LOT_NUMBER" class="text-uppercase lot-input" />
+                        </td>
+                        <td>
+                            <input asp-for="CHAMBER_HEAD_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
+                        </td>
                     </tr>
 
                     <!-- Row 2 -->
@@ -140,12 +170,14 @@
                         </td>
                         <td style=" font-size: 12px;">BOTTOM HEAT</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="BOTTOM_HEAD_FITUP_EMP_NUMBER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
-                        <td class="text-uppercase" contenteditable="true"></td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="BOTTOM_HEAD_PVI_LOT_NUMBER" class="text-uppercase lot-input" />
+                        </td>
+                        <td>
+                            <input asp-for="BOTTOM_HEAD_PVI_LOT_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
                         </td>
                     </tr>
 
@@ -156,12 +188,12 @@
                         </td>
                         <td style=" font-size: 12px;">TUBE INSTALL</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="TUBE_INSTALL_FITUP_EMP_NUMBER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="TUBE_INSTALL_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
                         </td>
                     </tr>
 
@@ -172,12 +204,12 @@
                         </td>
                         <td style=" font-size: 12px;">TUBE VERIFICATION</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="TUBE_VERIFICATION_1_FITUP_EMP_NUMBER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="TUBE_VERIFICATION_1_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
                         </td>
                     </tr>
 
@@ -188,12 +220,12 @@
                         </td>
                         <td style=" font-size: 12px;">TUBE TACK WEILD</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="TUBE_TACK_WELD_FITUP_EMP_NUMBER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="TUBE_TACK_WELD_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
                         </td>
                     </tr>
 
@@ -204,12 +236,12 @@
                         </td>
                         <td style=" font-size: 12px;">TUBE ROLL</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="TUBE_ROLL_FITUP_EMP_NUMBER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="TUBE_ROLL_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
                         </td>
                     </tr>
 
@@ -220,12 +252,12 @@
                         </td>
                         <td style=" font-size: 12px;">TUBE VERIFICATION</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="TUBE_VERIFICATION_2_FITUP_EMP_NUMBER" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
                         </td>
                         <td>&#x2718;</td>
                         <td class="text-uppercase" style=" font-size: 12px;">NONE REQUIRED</td>
                         <td>
-                            <input type="number" oninput="this.value = this.value.slice(0, 2)" class="number-input" />
+                            <input asp-for="TUBE_VERIFICATION_2_MFG" oninput="this.value = this.value.slice(0, 2)" class="text-uppercase mfg-input" />
                         </td>
                     </tr>
 

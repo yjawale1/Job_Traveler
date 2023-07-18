@@ -74,7 +74,10 @@ namespace ASME_Forms.Models
         public DateTime? QA_FINAL_INSP_DATE { get; set; }
 
         //Row11
-        public string? CBI_HX_NOTES { get; set; }
+        public string? CBI_HX_NOTES_LINE_1 { get; set; }
+        public string? CBI_HX_NOTES_LINE_2 { get; set; }
+        public string? CBI_HX_NOTES_LINE_3 { get; set; }
+
 
     }
 }
