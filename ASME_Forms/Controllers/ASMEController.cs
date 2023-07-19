@@ -39,7 +39,7 @@ namespace ASME_Forms.Controllers
 
             _db.ASME_CBI.Add(obj);
             _db.SaveChanges();
-
+            TempData["Success"] = "ASME From Created Successfully";
             return RedirectToAction("Index");
         }
 
@@ -55,7 +55,7 @@ namespace ASME_Forms.Controllers
 
             _db.ASME_CBI_HX.Add(obj1);
             _db.SaveChanges();
-
+            TempData["Success"] = "ASME From Created Successfully";
             return RedirectToAction("Index");
         }
 

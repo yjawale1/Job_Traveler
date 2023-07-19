@@ -537,6 +537,10 @@
                     const imageData = context.getImageData(0, 0, canvas.width, canvas.height).data;
                     const bytes = Array.from(imageData);
 
+                    // Save the image in `asp-for="PRODUCT_NUMBER"`
+                    const formData = new FormData();
+                    formData.append('PRODUCT_NUMBER', bytes);
+
                 });
 
                 startButton.addEventListener('click', (event) => {
